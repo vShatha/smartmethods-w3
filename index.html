@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
+    <script src="https://idmnyu.github.io/p5.js-speech/lib/p5.speech.js"></script>
+    <script src="arduino.js"></script>
+</head>
+
+<body>
+
+
+
+       <h1>hello please say something</h1>
+       <p id="test">your word will be here</p>
+
+    <div>
+        <button id="record">record</button>
+    </div>
+
+    <script>
+      //  let testtext= document.getElementById("test"
+       // )
+      // let recognition = new speechRecognition;
+      // const recognition= new speechRecognition;
+           //<scribt>recognition=lang."ar"</scribt>
+            //  translator.lang("ar");
+        document.getElementById('record').addEventListener('click', () => {
+            let reco = new p5.SpeechRec();
+            reco.start();
+            reco.onResult = () => {
+                if (reco.resultValue) {
+                  //  <button onclick="test()">'record'</button>
+                  document.getElementById('test').innerHTML=(reco.resultString)
+                console.log(reco.resultString) 
+            // document.write(reco.resultString)
+               //  document.getElementById('test').innerHTML
+                
+        }
+              
+                }
+                
+            }
+        );
+
+       
+
+    </script>
+
+
+</body>
+
+</html>
